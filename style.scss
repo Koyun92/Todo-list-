@@ -1,0 +1,44 @@
+// 
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 1.5rem;
+    background-image: url(/images/bg-mobile-dark.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% 33.3%;
+    background-color: hsl(235, 21%, 11%);
+    min-height: 100vh;
+}
+
+.todo {
+    padding: 6rem 2rem;
+
+    &__logo {
+        color: #fff;
+        text-transform: uppercase;
+        letter-spacing: .3em
+    }
+
+    &__header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+    }
+
+    &__icon--moon {
+        display: none;
+    }
+}

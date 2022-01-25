@@ -1,0 +1,50 @@
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 1.5rem;
+  background-image: url(/images/bg-mobile-dark.jpg);
+  background-repeat: no-repeat;
+  background-size: 100% 33.3%;
+  background-color: #161722;
+  min-height: 100vh;
+}
+
+.todo {
+  padding: 6rem 2rem;
+}
+
+.todo__logo {
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: .3em;
+}
+
+.todo__header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.todo__icon--moon {
+  display: none;
+}
+/*# sourceMappingURL=style.css.map */
