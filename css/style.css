@@ -1,3 +1,15 @@
+.radius {
+  border-radius: 1rem;
+}
+
+.bottomRadius {
+  border-radius: 0 0 1rem 1rem;
+}
+
+.topRadius {
+  border-radius: 1rem 1rem 0 0;
+}
+
 *,
 *::before,
 *::after {
@@ -17,7 +29,7 @@ body {
   font-size: 1.5rem;
   background-image: url(/images/bg-mobile-dark.jpg);
   background-repeat: no-repeat;
-  background-size: 100% 33.3%;
+  background-size: 100% 40%;
   background-color: #161722;
   min-height: 100vh;
 }
@@ -63,6 +75,10 @@ body {
   display: flex;
 }
 
+.todo__box--input {
+  margin: 4rem 0 2rem;
+}
+
 .todo__input {
   background-color: transparent;
   color: #cacde8;
@@ -80,5 +96,9 @@ body {
   border-radius: 50%;
   margin-right: 2rem;
   cursor: pointer;
+}
+
+.todo__list {
+  overflow: hidden;
 }
 /*# sourceMappingURL=style.css.map */

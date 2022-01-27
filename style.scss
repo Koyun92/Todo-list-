@@ -1,4 +1,5 @@
-// 
+@import '_components.scss';
+
 *,
 *::before,
 *::after {
@@ -17,7 +18,7 @@ body {
     font-size: 1.5rem;
     background-image: url(/images/bg-mobile-dark.jpg);
     background-repeat: no-repeat;
-    background-size: 100% 33.3%;
+    background-size: 100% 40%;
     background-color: hsl(235, 21%, 11%);
     min-height: 100vh;
 }
@@ -54,14 +55,23 @@ body {
         padding: 2rem 3rem;
         display: flex;
 
+
+        &--input {
+            margin: 4rem 0 2rem;
+
+        }
+
     }
+
+
 
     &__input {
         background-color: transparent;
         color: hsl(234, 39%, 85%);
         font-weight: 700;
         border: none;
-        flex-grow: 1
+        flex-grow: 1;
+
     }
 
     &__circle {
@@ -75,6 +85,11 @@ body {
 
 
     }
+
+    &__list {
+        overflow: hidden;
+    }
+
 
 
 
