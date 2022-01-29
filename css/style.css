@@ -29,7 +29,7 @@ body {
   font-size: 1.5rem;
   background-image: url(/images/bg-mobile-dark.jpg);
   background-repeat: no-repeat;
-  background-size: 100% 40%;
+  background-size: 100% 200px;
   background-color: #161722;
   min-height: 100vh;
 }
@@ -43,6 +43,8 @@ body {
 
 .todo {
   padding: 6rem 2rem;
+  max-width: 800px;
+  margin: auto;
 }
 
 .todo__logo {
@@ -73,15 +75,48 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  color: #cacde8;
+  word-break: break-all;
 }
 
 .todo__box--input {
   margin: 4rem 0 2rem;
 }
 
+.todo__box--status {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  color: #777a92;
+}
+
+.todo__box--filters {
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  margin-top: 5rem;
+  padding: 2rem 6rem;
+  color: #777a92;
+}
+
+.todo__box--filters p {
+  cursor: pointer;
+}
+
+.todo__box--filters p:hover {
+  color: #e4e5f1;
+}
+
 .todo__input {
   background-color: transparent;
-  color: #cacde8;
+  color: #777a92;
   font-weight: 700;
   border: none;
   -webkit-box-flex: 1;
@@ -89,16 +124,54 @@ body {
           flex-grow: 1;
 }
 
+.todo__input:focus {
+  color: #e4e5f1;
+  outline: none;
+}
+
 .todo__circle {
-  height: 2rem;
-  width: 2rem;
-  border: 1px solid #cacde8;
+  min-height: 2rem;
+  min-width: 2rem;
+  border: 1px solid #777a92;
   border-radius: 50%;
   margin-right: 2rem;
   cursor: pointer;
 }
 
-.todo__list {
-  overflow: hidden;
+.todo__list-item {
+  border-bottom: 1px solid #777a92;
+}
+
+.todo__cross {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.todo__status {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  color: #777a92;
+}
+
+.todo__info {
+  margin-top: 5rem;
+  text-align: center;
+  color: #777a92;
+}
+
+.todo__btn-clear {
+  cursor: pointer;
+}
+
+.todo__btn-clear:hover {
+  color: #e4e5f1;
 }
 /*# sourceMappingURL=style.css.map */

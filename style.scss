@@ -18,7 +18,7 @@ body {
     font-size: 1.5rem;
     background-image: url(/images/bg-mobile-dark.jpg);
     background-repeat: no-repeat;
-    background-size: 100% 40%;
+    background-size: 100% 200px;
     background-color: hsl(235, 21%, 11%);
     min-height: 100vh;
 }
@@ -32,6 +32,8 @@ body {
 
 .todo {
     padding: 6rem 2rem;
+    max-width: 800px;
+    margin: auto;
 
     &__logo {
         color: #fff;
@@ -54,11 +56,39 @@ body {
         background-color: hsl(235, 24%, 19%);
         padding: 2rem 3rem;
         display: flex;
-
+        align-items: center;
+        justify-content: center;
+        flex-wrap: nowrap;
+        color: hsl(234, 39%, 85%);
+        word-break: break-all;
 
         &--input {
             margin: 4rem 0 2rem;
 
+
+        }
+
+        &--status {
+            justify-content: space-between;
+            color: hsl(234, 11%, 52%);
+        }
+
+        &--filters {
+            justify-content: space-around;
+            margin-top: 5rem;
+            padding: 2rem 6rem;
+            color: hsl(234, 11%, 52%);
+
+
+            p {
+                cursor: pointer;
+
+
+
+                &:hover {
+                    color: hsl(236, 33%, 92%);
+                }
+            }
         }
 
     }
@@ -67,17 +97,22 @@ body {
 
     &__input {
         background-color: transparent;
-        color: hsl(234, 39%, 85%);
+        color: hsl(234, 11%, 52%);
         font-weight: 700;
         border: none;
         flex-grow: 1;
 
+        &:focus {
+            color: hsl(236, 33%, 92%);
+            outline: none;
+        }
+
     }
 
     &__circle {
-        height: 2rem;
-        width: 2rem;
-        border: 1px solid hsl(234, 39%, 85%);
+        min-height: 2rem;
+        min-width: 2rem;
+        border: 1px solid hsl(234, 11%, 52%);
         border-radius: 50%;
         margin-right: 2rem;
         cursor: pointer;
@@ -87,7 +122,38 @@ body {
     }
 
     &__list {
-        overflow: hidden;
+
+
+        &-item {
+            border-bottom: 1px solid hsl(234, 11%, 52%);
+        }
+
+
+    }
+
+    &__cross {
+        flex-grow: 1;
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    &__status {
+        justify-content: space-between;
+        color: hsl(234, 11%, 52%);
+    }
+
+    &__info {
+        margin-top: 5rem;
+        text-align: center;
+        color: hsl(234, 11%, 52%);
+    }
+
+    &__btn-clear {
+        cursor: pointer;
+
+        &:hover {
+            color: hsl(236, 33%, 92%);
+        }
     }
 
 
