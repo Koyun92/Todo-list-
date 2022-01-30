@@ -142,7 +142,7 @@ body {
   border-bottom: 1px solid #777a92;
 }
 
-.todo__cross {
+.todo__box--cross {
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
