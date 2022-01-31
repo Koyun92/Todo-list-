@@ -156,7 +156,12 @@ body {
         }
     }
 
+}
 
 
-
+@media(min-width: 800px) {
+    body {
+        background-image: url(/images/bg-desktop-dark.jpg);
+        background-size: 100% 250px;
+    }
 }
