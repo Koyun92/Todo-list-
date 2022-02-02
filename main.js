@@ -46,7 +46,7 @@ const checkClick = (e) => {
     }
 }
 
-const filtering = () => {
+const clearingCompleted = () => {
 
     const clearedList = listItems.filter(item => !item.matches('.crossOut'))
     listItems = clearedList
@@ -70,7 +70,7 @@ todoList.addEventListener('click', ((e) => {
 }))
 
 
-clearBtn.addEventListener('click', filtering)
+clearBtn.addEventListener('click', clearingCompleted)
 
 
 // ustawić Checked do końca w elemencie after >> zrobić clear completed>> zrobić filtrowanie>> zrobić drag and drop>> zrobić zmianę kolorów.
