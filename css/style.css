@@ -154,6 +154,10 @@ body {
           justify-content: flex-end;
 }
 
+.todo__cross {
+  cursor: pointer;
+}
+
 .todo__status {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;

@@ -30,6 +30,10 @@ body {
     background-repeat: no-repeat;
 }
 
+.crossOut {
+    text-decoration: line-through;
+}
+
 .todo {
     padding: 6rem 2rem;
     max-width: 800px;
@@ -135,6 +139,11 @@ body {
         flex-grow: 1;
         display: flex;
         justify-content: flex-end;
+
+    }
+
+    &__cross {
+        cursor: pointer;
     }
 
     &__status {

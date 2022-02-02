@@ -34,7 +34,6 @@ const renderTodos = () => {
 
 }
 const removeTodo = (e) => {
-    console.log(e.target.closest('li').dataset.id);
     listItems.splice(e.target.closest('li').dataset.id, 1);
     renderTodos();
 }
@@ -43,10 +42,17 @@ const checkClick = (e) => {
         removeTodo(e);
     } else if (e.target.matches('.todo__circle')) {
         e.target.classList.toggle('checked')
+        e.target.parentNode.classList.add('crossOut')
     }
 }
 
+const filtering = () => {
 
+    const clearedList = listItems.filter(item => !item.matches('.crossOut'))
+    listItems = clearedList
+    renderTodos();
+
+}
 
 
 
@@ -64,10 +70,7 @@ todoList.addEventListener('click', ((e) => {
 }))
 
 
-clearBtn.addEventListener('click', () => {
-    listItems = [];
-    renderTodos();
-})
+clearBtn.addEventListener('click', filtering)
 
 
 // ustawić Checked do końca w elemencie after >> zrobić clear completed>> zrobić filtrowanie>> zrobić drag and drop>> zrobić zmianę kolorów.
