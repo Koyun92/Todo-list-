@@ -19,6 +19,10 @@
   padding: 0;
 }
 
+.focused {
+  color: #e4e5f1;
+}
+
 html {
   font-size: 62.5%;
   scroll-behavior: smooth;
@@ -39,6 +43,10 @@ body {
   background-size: 60%;
   background-position: center center;
   background-repeat: no-repeat;
+}
+
+.crossOut {
+  text-decoration: line-through;
 }
 
 .todo {

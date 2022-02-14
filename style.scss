@@ -8,6 +8,10 @@
     padding: 0;
 }
 
+.focused {
+    color: hsl(236, 33%, 92%);
+}
+
 html {
     font-size: 62.5%;
     scroll-behavior: smooth;
