@@ -21,23 +21,45 @@ const addTodo = () => {
     <p>${input.value}
     </p>
     <div class="todo__box--cross"><img class="todo__cross" src="images/icon-cross.svg" alt=""></div>`
-    listItems.push(li);
+    listItems.unshift(li);
     input.value = "";
-    filterTodos();
-
-    renderTodos(viewCheck());
+    idGive();
+    renderList();
+    todosStatus();
 
 }
-const viewCheck = () => {
+const idGive = () => {
+    listItems.forEach((item, index) => {
+        item.setAttribute("data-id", index);
+    })
+}
+const renderList = () => {
+    todoList.innerHTML = "";
     if (actualView === "allTodos") {
-        console.log('rendering allTOdos');
-        return listItems
+        listItems.forEach((item) => {
+            item.style.display = "flex"
+            todoList.appendChild(item);
+        })
     } else if (actualView === "activeTodos") {
         console.log('rendering active');
-        return activeList
+        listItems.forEach((item) => {
+            item.style.display = "flex"
+            if (item.matches(".crossOut")) {
+                item.style.display = "none";
+
+            }
+            todoList.appendChild(item);
+        })
     } else {
         console.log('rendering completed');
-        return completedList
+        listItems.forEach((item) => {
+            item.style.display = "flex"
+            if (!item.matches(".crossOut")) {
+                item.style.display = "none";
+
+            }
+            todoList.appendChild(item);
+        })
     }
 }
 
@@ -45,22 +67,10 @@ const todosStatus = () => {
     todoStatus.innerHTML = listItems.filter(item => !item.matches('.crossOut')).length + " ";
 }
 
-const renderTodos = (list) => {
-    todoList.innerHTML = "";
-
-    list.forEach((item, index) => {
-        todoList.appendChild(item);
-        item.setAttribute("data-id", index);
-    })
-    todosStatus();
-
-}
 
 const removeTodo = (e) => {
     listItems.splice(e.target.closest('li').dataset.id, 1);
-    filterTodos();
-
-    renderTodos(viewCheck());
+    todosStatus();
 }
 const filterTodos = () => {
     activeList = listItems.filter(item => !item.matches('.crossOut'))
@@ -70,38 +80,26 @@ const filterTodos = () => {
 const checkClick = (e) => {
     if (e.target.matches(".todo__cross")) {
         removeTodo(e);
+        idGive();
+
     } else if (e.target.matches('.todo__circle')) {
         e.target.classList.toggle('checked');
         e.target.parentNode.classList.toggle('crossOut');
-
         todosStatus();
-
-
-
     }
-
-    filterTodos();
-    renderTodos(viewCheck());
-
+    renderList();
 }
 
 const clearingCompleted = () => {
-
     activeList = listItems.filter(item => !item.matches('.crossOut'))
     listItems = activeList
-    completedList = [];
-    renderTodos(viewCheck());
-
+    renderList();
 }
-
-
 const classClearing = () => {
     for (let i = 0; i < filters.length; i++) {
         filters[i].classList.remove('focused')
     }
 }
-
-
 
 // // Event Listeners
 // INPUT
@@ -133,7 +131,7 @@ filters.forEach((filter) => {
             actualView = "completedList"
 
         }
-        renderTodos(viewCheck());
+        renderList();
 
     })
 
@@ -141,5 +139,4 @@ filters.forEach((filter) => {
 clearBtn.addEventListener('click', clearingCompleted)
 
 
-// naprawić usuwanie completeed w completed>> zrobić drag and drop>> zrobić zmianę kolorów.
-// zrobić flagę na to czy jest filter filters ma klase all i focused
+//zrboić usuwanie >> Zrobic drag and drop>> zmiane kolorów itd 
