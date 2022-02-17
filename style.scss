@@ -136,8 +136,13 @@ body {
             border-bottom: 1px solid hsl(234, 11%, 52%);
         }
 
+        .hint {
+            background-color: rgb(73, 70, 70);
+        }
+
 
     }
+
 
     &__box--cross {
         flex-grow: 1;

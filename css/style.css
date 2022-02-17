@@ -150,6 +150,10 @@ body {
   border-bottom: 1px solid #777a92;
 }
 
+.todo__list .hint {
+  background-color: #494646;
+}
+
 .todo__box--cross {
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;

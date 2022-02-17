@@ -1,3 +1,72 @@
+function slist(target) {
+    // (A) SET CSS + GET ALL LIST ITEMS
+
+    let items = target.getElementsByTagName("li"),
+        current = null;
+
+    // (B) MAKE ITEMS DRAGGABLE + SORTABLE
+    for (let i of items) {
+        // (B1) ATTACH DRAGGABLE
+        i.draggable = true;
+
+        // (B2) DRAG START - YELLOW HIGHLIGHT DROPZONES
+        i.ondragstart = (ev) => {
+            current = i;
+            for (let it of items) {
+                if (it != current) {
+                    it.classList.add("hint");
+                }
+            }
+        };
+
+        // (B3) DRAG ENTER - RED HIGHLIGHT DROPZONE
+        i.ondragenter = (ev) => {
+            if (i != current) {
+                i.classList.add("active");
+            }
+        };
+
+        // (B4) DRAG LEAVE - REMOVE RED HIGHLIGHT
+        i.ondragleave = () => {
+            i.classList.remove("active");
+        };
+
+        // (B5) DRAG END - REMOVE ALL HIGHLIGHTS
+        i.ondragend = () => {
+            for (let it of items) {
+                it.classList.remove("hint");
+                it.classList.remove("active");
+            }
+        };
+
+        // (B6) DRAG OVER - PREVENT THE DEFAULT "DROP", SO WE CAN DO OUR OWN
+        i.ondragover = (evt) => {
+            evt.preventDefault();
+        };
+
+        // (B7) ON DROP - DO SOMETHING
+        i.ondrop = (evt) => {
+            evt.preventDefault();
+            if (i != current) {
+                let currentpos = 0,
+                    droppedpos = 0;
+                for (let it = 0; it < items.length; it++) {
+                    if (current == items[it]) {
+                        currentpos = it;
+                    }
+                    if (i == items[it]) {
+                        droppedpos = it;
+                    }
+                }
+                if (currentpos < droppedpos) {
+                    i.parentNode.insertBefore(current, i.nextSibling);
+                } else {
+                    i.parentNode.insertBefore(current, i);
+                }
+            }
+        };
+    }
+}
 // Global Variables
 const input = document.querySelector('.todo__input');
 const todoList = document.querySelector('.todo__list');
@@ -8,7 +77,6 @@ const filters = document.querySelectorAll('.filter');
 
 let listItems = [];
 let activeList = [];
-let completedList = [];
 let actualView = "allTodos";
 
 // Functions
@@ -16,7 +84,7 @@ let actualView = "allTodos";
 const addTodo = () => {
     const li = document.createElement('li');
     li.classList.add('todo__list-item', 'todo__box');
-
+    li.setAttribute("draggable", true)
     li.innerHTML = `<div class="todo__circle"> </div>
     <p>${input.value}
     </p>
@@ -26,6 +94,7 @@ const addTodo = () => {
     idGive();
     renderList();
     todosStatus();
+    slist(document)
 
 }
 const idGive = () => {
@@ -41,7 +110,6 @@ const renderList = () => {
             todoList.appendChild(item);
         })
     } else if (actualView === "activeTodos") {
-        console.log('rendering active');
         listItems.forEach((item) => {
             item.style.display = "flex"
             if (item.matches(".crossOut")) {
@@ -51,12 +119,10 @@ const renderList = () => {
             todoList.appendChild(item);
         })
     } else {
-        console.log('rendering completed');
         listItems.forEach((item) => {
             item.style.display = "flex"
             if (!item.matches(".crossOut")) {
                 item.style.display = "none";
-
             }
             todoList.appendChild(item);
         })
@@ -66,7 +132,6 @@ const renderList = () => {
 const todosStatus = () => {
     todoStatus.innerHTML = listItems.filter(item => !item.matches('.crossOut')).length + " ";
 }
-
 
 const removeTodo = (e) => {
     listItems.splice(e.target.closest('li').dataset.id, 1);
@@ -100,6 +165,8 @@ const classClearing = () => {
         filters[i].classList.remove('focused')
     }
 }
+
+
 
 // // Event Listeners
 // INPUT
@@ -139,4 +206,4 @@ filters.forEach((filter) => {
 clearBtn.addEventListener('click', clearingCompleted)
 
 
-//zrboić usuwanie >> Zrobic drag and drop>> zmiane kolorów itd 
+// Zrobic drag and drop>> zmiane kolorów itd 
