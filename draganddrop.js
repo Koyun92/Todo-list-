@@ -1,18 +1,17 @@
 function slist(target) {
     // (A) SET CSS + GET ALL LIST ITEMS
-
-    let items = target.getElementsByTagName("li"),
-        current = null;
+    target.classList.add("slist");
+    current = null;
 
     // (B) MAKE ITEMS DRAGGABLE + SORTABLE
-    for (let i of items) {
+    for (let i of listItems) {
         // (B1) ATTACH DRAGGABLE
         i.draggable = true;
 
         // (B2) DRAG START - YELLOW HIGHLIGHT DROPZONES
         i.ondragstart = (ev) => {
             current = i;
-            for (let it of items) {
+            for (let it of listItems) {
                 if (it != current) {
                     it.classList.add("hint");
                 }
@@ -29,19 +28,22 @@ function slist(target) {
         // (B4) DRAG LEAVE - REMOVE RED HIGHLIGHT
         i.ondragleave = () => {
             i.classList.remove("active");
+
         };
 
         // (B5) DRAG END - REMOVE ALL HIGHLIGHTS
         i.ondragend = () => {
-            for (let it of items) {
+            for (let it of listItems) {
                 it.classList.remove("hint");
                 it.classList.remove("active");
             }
+
         };
 
         // (B6) DRAG OVER - PREVENT THE DEFAULT "DROP", SO WE CAN DO OUR OWN
         i.ondragover = (evt) => {
             evt.preventDefault();
+
         };
 
         // (B7) ON DROP - DO SOMETHING
@@ -50,11 +52,11 @@ function slist(target) {
             if (i != current) {
                 let currentpos = 0,
                     droppedpos = 0;
-                for (let it = 0; it < items.length; it++) {
-                    if (current == items[it]) {
+                for (let it = 0; it < listItems.length; it++) {
+                    if (current == listItems[it]) {
                         currentpos = it;
                     }
-                    if (i == items[it]) {
+                    if (i == listItems[it]) {
                         droppedpos = it;
                     }
                 }
@@ -64,6 +66,14 @@ function slist(target) {
                     i.parentNode.insertBefore(current, i);
                 }
             }
+
+            console.log('asdas');
+            listItems = [...document.querySelectorAll('li')]
+            idGive();
+
+
         };
+
     }
+
 }

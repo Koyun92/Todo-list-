@@ -137,10 +137,12 @@ body {
         }
 
         .hint {
-            background-color: rgb(73, 70, 70);
+            background-color: rgb(0, 0, 0);
         }
 
-
+        .active {
+            background-color: rgb(26, 17, 17);
+        }
     }
 
 

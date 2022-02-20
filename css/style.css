@@ -151,7 +151,11 @@ body {
 }
 
 .todo__list .hint {
-  background-color: #494646;
+  background-color: black;
+}
+
+.todo__list .active {
+  background-color: #1a1111;
 }
 
 .todo__box--cross {
