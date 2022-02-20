@@ -20,10 +20,10 @@ html {
 body {
     font-family: 'Josefin Sans', sans-serif;
     font-size: 1.5rem;
-    background-image: url(/images/bg-mobile-dark.jpg);
+    background-image: var(--background-img);
     background-repeat: no-repeat;
     background-size: 100% 200px;
-    background-color: hsl(235, 21%, 11%);
+    background-color: var(--background-body-color);
     min-height: 100vh;
 }
 
@@ -61,7 +61,7 @@ body {
     }
 
     &__box {
-        background-color: hsl(235, 24%, 19%);
+        background-color: var(--background-box);
         padding: 2rem 3rem;
         display: flex;
         align-items: center;
@@ -94,7 +94,7 @@ body {
 
 
                 &:hover {
-                    color: hsl(236, 33%, 92%);
+                    color: var(--font-color-hover);
                 }
             }
         }
@@ -172,7 +172,7 @@ body {
         cursor: pointer;
 
         &:hover {
-            color: hsl(236, 33%, 92%);
+            color: var(--font-color-hover);
         }
     }
 

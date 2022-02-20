@@ -31,10 +31,10 @@ html {
 body {
   font-family: 'Josefin Sans', sans-serif;
   font-size: 1.5rem;
-  background-image: url(/images/bg-mobile-dark.jpg);
+  background-image: var(--background-img);
   background-repeat: no-repeat;
   background-size: 100% 200px;
-  background-color: #161722;
+  background-color: var(--background-body-color);
   min-height: 100vh;
 }
 
@@ -78,7 +78,7 @@ body {
 }
 
 .todo__box {
-  background-color: #25273c;
+  background-color: var(--background-box);
   padding: 2rem 3rem;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -119,7 +119,7 @@ body {
 }
 
 .todo__box--filters p:hover {
-  color: #e4e5f1;
+  color: var(--font-color-hover);
 }
 
 .todo__input {
@@ -192,7 +192,7 @@ body {
 }
 
 .todo__btn-clear:hover {
-  color: #e4e5f1;
+  color: var(--font-color-hover);
 }
 
 @media (min-width: 800px) {
