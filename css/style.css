@@ -74,6 +74,12 @@ body {
           align-items: center;
 }
 
+.todo__icon {
+  cursor: pointer;
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
 .todo__icon--moon {
   display: none;
 }

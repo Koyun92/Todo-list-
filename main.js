@@ -2,6 +2,7 @@
 const input = document.querySelector('.todo__input');
 const todoList = document.querySelector('.todo__list');
 const circle = document.querySelectorAll('.todo__circle');
+const circleHeader = document.querySelector('#add-button');
 const todoStatus = document.querySelector('.todo__status span');
 const clearBtn = document.querySelector('.todo__btn-clear');
 const filters = document.querySelectorAll('.filter');
@@ -104,6 +105,11 @@ const classClearing = () => {
 input.addEventListener('keyup', (e) => {
     if (e.keyCode === 13 && input.value) {
         addTodo();
+    }
+})
+circleHeader.addEventListener('click', () => {
+    if (input.value) {
+        addTodo()
     }
 })
 
