@@ -20,7 +20,7 @@
 }
 
 .focused {
-  color: #e4e5f1;
+  color: #3a7bfd;
 }
 
 html {
@@ -31,7 +31,7 @@ html {
 body {
   font-family: 'Josefin Sans', sans-serif;
   font-size: 1.5rem;
-  background-image: var(--background-img);
+  background-image: var(--background-image-mobile);
   background-repeat: no-repeat;
   background-size: 100% 200px;
   background-color: var(--background-body-color);
@@ -39,8 +39,9 @@ body {
 }
 
 .checked {
-  background-image: url(/images/icon-check.svg);
-  background-size: 60%;
+  background-image: url("/images/icon-check.svg"), -webkit-gradient(linear, left top, right bottom, from(#57ddff), color-stop(#7a8cff), to(#c058f3));
+  background-image: url("/images/icon-check.svg"), linear-gradient(to right bottom, #57ddff, #7a8cff, #c058f3);
+  background-size: 60% contain;
   background-position: center center;
   background-repeat: no-repeat;
 }
@@ -91,7 +92,7 @@ body {
           justify-content: center;
   -ms-flex-wrap: nowrap;
       flex-wrap: nowrap;
-  color: #cacde8;
+  color: var(--font-color);
   word-break: break-all;
 }
 
@@ -124,7 +125,7 @@ body {
 
 .todo__input {
   background-color: transparent;
-  color: #777a92;
+  color: var(--font-color);
   font-weight: 700;
   border: none;
   -webkit-box-flex: 1;
@@ -133,7 +134,7 @@ body {
 }
 
 .todo__input:focus {
-  color: #e4e5f1;
+  color: var(--font-color);
   outline: none;
 }
 
@@ -197,7 +198,7 @@ body {
 
 @media (min-width: 800px) {
   body {
-    background-image: url(/images/bg-desktop-dark.jpg);
+    background-image: var(--background-image-desktop);
     background-size: 100% 250px;
   }
 }

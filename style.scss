@@ -9,7 +9,7 @@
 }
 
 .focused {
-    color: hsl(236, 33%, 92%);
+    color: hsl(220, 98%, 61%)
 }
 
 html {
@@ -20,7 +20,7 @@ html {
 body {
     font-family: 'Josefin Sans', sans-serif;
     font-size: 1.5rem;
-    background-image: var(--background-img);
+    background-image: var(--background-image-mobile);
     background-repeat: no-repeat;
     background-size: 100% 200px;
     background-color: var(--background-body-color);
@@ -28,8 +28,8 @@ body {
 }
 
 .checked {
-    background-image: url(/images/icon-check.svg);
-    background-size: 60%;
+    background-image: url('/images/icon-check.svg'), linear-gradient(to right bottom, #57ddff, #7a8cff, #c058f3);
+    background-size: 60% contain;
     background-position: center center;
     background-repeat: no-repeat;
 }
@@ -67,7 +67,7 @@ body {
         align-items: center;
         justify-content: center;
         flex-wrap: nowrap;
-        color: hsl(234, 39%, 85%);
+        color: var(--font-color);
         word-break: break-all;
 
         &--input {
@@ -105,13 +105,13 @@ body {
 
     &__input {
         background-color: transparent;
-        color: hsl(234, 11%, 52%);
+        color: var(--font-color);
         font-weight: 700;
         border: none;
         flex-grow: 1;
 
         &:focus {
-            color: hsl(236, 33%, 92%);
+            color: var(--font-color);
             outline: none;
         }
 
@@ -181,7 +181,7 @@ body {
 
 @media(min-width: 800px) {
     body {
-        background-image: url(/images/bg-desktop-dark.jpg);
+        background-image: var(--background-image-desktop);
         background-size: 100% 250px;
     }
 }
