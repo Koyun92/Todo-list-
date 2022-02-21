@@ -8,19 +8,19 @@
 
 
 const root = document.documentElement;
-const themeBtn = document.querySelectorAll('.todo__icon')
+const themeBtn = document.querySelector('.todo__header .todo__icon')
 let darkMode = true;
-const icon = document.querySelector('.todo__header .todo__icon')
+
 const themeSwitch = () => {
 
     if (darkMode) {
-        icon.setAttribute('src', '/images/icon-sun.svg')
+        themeBtn.setAttribute('src', 'images/icon-sun.svg')
 
         root.style.setProperty('--font-color-hover', 'hsl(236, 33%, 92%)');
         root.style.setProperty('--font-color', 'hsl(234, 39%, 85%)');
         root.style.setProperty('--background-box', ' #25273c');
-        root.style.setProperty('--background-body-color', 'hsl(235, 21%, 11%)')
-        root.style.setProperty('--background-image-mobile', 'url(/images/bg-mobile-dark.jpg)')
+        root.style.setProperty('--background-body-color', 'hsl(235, 21%, 11%)');
+        root.style.setProperty('--background-image-mobile', 'url(/images/bg-mobile-dark.jpg)');
         root.style.setProperty('--background-image-desktop', 'url(/images/bg-desktop-dark.jpg)')
 
 
@@ -28,7 +28,7 @@ const themeSwitch = () => {
 
     } else {
         darkMode = !darkMode;
-        icon.setAttribute('src', '/images/icon-moon.svg')
+        themeBtn.setAttribute('src', 'images/icon-moon.svg')
         root.style.setProperty('--font-color-hover', 'hsl(235, 19%, 35%)');
         root.style.setProperty('--font-color', 'hsl(234, 11%, 52%)');
         root.style.setProperty('--background-box', ' #fff');
@@ -43,8 +43,4 @@ const themeSwitch = () => {
 }
 
 
-themeBtn.forEach(item => {
-    item.addEventListener('click', themeSwitch);
-
-
-})
+themeBtn.addEventListener('click', themeSwitch);
