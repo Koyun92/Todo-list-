@@ -32,7 +32,7 @@ body {
   font-family: 'Josefin Sans', sans-serif;
   font-size: 1.5rem;
   background-color: var(--background-body-color);
-  background-image: url(../images/bg-mobile-dark.jpg);
+  background-image: var(--background-image-mobile);
   background-repeat: no-repeat;
   background-size: 100% 200px;
   min-height: 100vh;
@@ -155,6 +155,7 @@ body {
 
 .todo__list-item {
   border-bottom: 1px solid #777a92;
+  cursor: pointer !important;
 }
 
 .todo__list .hint {

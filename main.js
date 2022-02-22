@@ -15,7 +15,7 @@ let actualView = "allTodos";
 
 const addTodo = () => {
     const li = document.createElement('li');
-    li.classList.add('todo__list-item', 'todo__box');
+    li.classList.add('todo__list-item', 'todo__box', 'draggable');
 
     li.innerHTML = `<div class="todo__circle"> </div>
     <p>${input.value}

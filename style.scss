@@ -21,8 +21,7 @@ body {
     font-family: 'Josefin Sans', sans-serif;
     font-size: 1.5rem;
     background-color: var(--background-body-color);
-    background-image: url(../images/bg-mobile-dark.jpg);
-    // background-image: var(--background-image-mobile);
+    background-image: var(--background-image-mobile);
     background-repeat: no-repeat;
     background-size: 100% 200px;
 
@@ -142,6 +141,7 @@ body {
 
         &-item {
             border-bottom: 1px solid hsl(234, 11%, 52%);
+            cursor: pointer !important;
         }
 
         .hint {
