@@ -17,10 +17,10 @@ const addTodo = () => {
     const li = document.createElement('li');
     li.classList.add('todo__list-item', 'todo__box', 'draggable');
 
-    li.innerHTML = `<div class="todo__circle"> </div>
-    <p>${input.value}
+    li.innerHTML = `<div class="todo__circle draggable"> </div>
+    <p class="draggable">${input.value}
     </p>
-    <div class="todo__box--cross"><img class="todo__cross" src="images/icon-cross.svg" alt=""></div>`
+    <div class="todo__box--cross"><img class="todo__cross draggable" src="images/icon-cross.svg" alt=""></div>`
     listItems.unshift(li);
     input.value = "";
     idGive();
