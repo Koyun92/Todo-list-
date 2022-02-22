@@ -31,10 +31,10 @@ html {
 body {
   font-family: 'Josefin Sans', sans-serif;
   font-size: 1.5rem;
-  background-image: var(--background-image-mobile);
+  background-color: var(--background-body-color);
+  background-image: url(../images/bg-mobile-dark.jpg);
   background-repeat: no-repeat;
   background-size: 100% 200px;
-  background-color: var(--background-body-color);
   min-height: 100vh;
 }
 
