@@ -6,7 +6,13 @@ const circleHeader = document.querySelector('#add-button');
 const todoStatus = document.querySelector('.todo__status span');
 const clearBtn = document.querySelector('.todo__btn-clear');
 const filters = document.querySelectorAll('.filter');
-
+var el = document.getElementById('items');
+Sortable.create(el, {
+    onEnd: function ( /**Event*/ evt) {
+        listItems = [...document.querySelectorAll('li')]
+        idGive();
+    },
+});
 let listItems = [];
 let activeList = [];
 let actualView = "allTodos";
@@ -17,16 +23,16 @@ const addTodo = () => {
     const li = document.createElement('li');
     li.classList.add('todo__list-item', 'todo__box', 'draggable');
 
-    li.innerHTML = `<div class="todo__circle draggable"> </div>
-    <p class="draggable">${input.value}
+    li.innerHTML = `<div class="todo__circle "> </div>
+    <p >${input.value}
     </p>
-    <div class="todo__box--cross"><img class="todo__cross draggable" src="images/icon-cross.svg" alt=""></div>`
+    <div class="todo__box--cross"><img class="todo__cross " src="images/icon-cross.svg" alt=""></div>`
     listItems.unshift(li);
     input.value = "";
     idGive();
     renderList();
     todosStatus();
-    slist(document.getElementById('sortlist'))
+
 
 }
 const idGive = () => {

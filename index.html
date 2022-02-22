@@ -10,13 +10,14 @@
   <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 
+
   <title>Frontend Mentor | Todo app</title>
 
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
 
 </head>
 
-<body onload="themeSwitch(),draggin()">
+<body onload="themeSwitch()">
   <main>
     <div class="todo">
       <div class="todo__header">
@@ -28,7 +29,7 @@
         <div class="todo__circle" id="add-button"> </div>
         <input type="text" placeholder="Create a new Todo" class="todo__input">
       </div>
-      <ul class="todo__list topRadius" id="sortlist">
+      <ul class="todo__list topRadius" id="items">
 
 
       </ul>
@@ -41,24 +42,22 @@
       <div class="todo__box todo__box--filters  radius">
         <p class="filter filters__all focused"> All</p>
         <p class="filter filters__active"> Active </p>
-        <p class="filter filters__completed draggable"> Completed</p>
+        <p class="filter filters__completed "> Completed</p>
       </div>
-      <p class="todo__info "> Drag and drop to reorder list</p>
+      <p class="todo__info draggable"> Drag and drop to reorder list</p>
 
 
 
   </main>
   </div>
 
-  <script src='draganddrop.js'>
-
-  </script>
 
 
+  <script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
 
   <script src="main.js"></script>
   <script src="themeSet.js"></script>
-  <script src="draggin.min.js"></script>
+
 </body>
 
 
