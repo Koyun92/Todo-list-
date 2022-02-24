@@ -28,6 +28,12 @@ html {
   scroll-behavior: smooth;
 }
 
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+
 body {
   font-family: 'Josefin Sans', sans-serif;
   font-size: 1.5rem;
