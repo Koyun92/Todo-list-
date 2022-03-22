@@ -37,6 +37,9 @@ body {
 body {
   font-family: 'Josefin Sans', sans-serif;
   font-size: 1.5rem;
+}
+
+.wrapper {
   background-color: var(--background-body-color);
   background-image: var(--background-image-mobile);
   background-repeat: no-repeat;
@@ -210,7 +213,7 @@ body {
 }
 
 @media (min-width: 800px) {
-  body {
+  .wrapper {
     background-image: var(--background-image-desktop);
     background-size: 100% 250px;
   }
