@@ -43,6 +43,7 @@ body {
   background-color: var(--background-body-color);
   background-image: var(--background-image-mobile) !important;
   background-repeat: no-repeat;
+  background-position: top;
   background-size: 100% 200px !important;
   min-height: 100vh;
 }
