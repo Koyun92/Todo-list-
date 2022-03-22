@@ -41,9 +41,9 @@ body {
 
 .wrapper {
   background-color: var(--background-body-color);
-  background-image: var(--background-image-mobile);
+  background-image: var(--background-image-mobile) !important;
   background-repeat: no-repeat;
-  background-size: 100% 200px;
+  background-size: 100% 200px !important;
   min-height: 100vh;
 }
 
@@ -216,8 +216,8 @@ body {
 
 @media (min-width: 800px) {
   .wrapper {
-    background-image: var(--background-image-desktop);
-    background-size: 100% 250px;
+    background-image: var(--background-image-desktop) !important;
+    background-size: 100% 250px !important;
   }
 }
 /*# sourceMappingURL=style.css.map */
