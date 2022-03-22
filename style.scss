@@ -138,6 +138,7 @@ body {
     &__circle {
         min-height: 2rem;
         min-width: 2rem;
+        padding: 1rem;
         border: 1px solid hsl(234, 11%, 52%);
         border-radius: 50%;
         margin-right: 2rem;
@@ -174,6 +175,7 @@ body {
 
     &__cross {
         cursor: pointer;
+        padding: 1rem;
     }
 
     &__status {

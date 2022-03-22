@@ -156,6 +156,7 @@ body {
 .todo__circle {
   min-height: 2rem;
   min-width: 2rem;
+  padding: 1rem;
   border: 1px solid #777a92;
   border-radius: 50%;
   margin-right: 2rem;
@@ -189,6 +190,7 @@ body {
 
 .todo__cross {
   cursor: pointer;
+  padding: 1rem;
 }
 
 .todo__status {
